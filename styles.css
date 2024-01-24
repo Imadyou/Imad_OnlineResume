@@ -1,0 +1,87 @@
+/* styles.css */
+
+/* Import the Roboto font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
+
+:root {
+  --primary-color: #28555e;
+  --text-color: #323b4c;
+  --secondary-text-color: #ffffff;
+  --third-color: #414042;
+  --fourth-color: #444440;
+  --fifth-color: #d18c5c;
+  --font-family: "Roboto", sans-serif;
+}
+
+body {
+  text-align: center;
+  font-family: var(--font-family);
+  padding: 0;
+  margin: 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-text-color);
+}
+
+header {
+  background-color: var(--secondary-text-color);
+  color: var(--primary-color);
+  padding: 0.5em;
+  text-align: left;
+}
+
+nav {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Add space between items */
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 15px; /* Adjust spacing between items */
+}
+
+nav a {
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+nav a:hover {
+  color: var(--fifth-color);
+  transition: color 0.3s ease;
+}
+
+section {
+  padding: 2em;
+  margin: 2rem;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+div {
+  text-align: left;
+}
+
+.contact a {
+  text-align: left;
+  text-decoration: none;
+  color: var(--secondary-text-color);
+}
+
+.contact a:hover {
+  color: var(--fifth-color);
+  transition: color 0.3s ease;
+}
+.footer {
+  padding: 0.5em;
+  margin: 0;
+  color: var(--primary-color);
+  background-color: var(--secondary-text-color);
+}
+/* Add more specific styles using the custom properties as needed */
