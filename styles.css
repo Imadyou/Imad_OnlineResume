@@ -11,11 +11,14 @@
   --fourth-color: #444440;
   --fifth-color: #d18c5c;
   --font-family: "Roboto", sans-serif;
+  --shadow-wite: #ffffff;
 }
 
 body {
+  /* max-width: 2000px; */
   text-align: center;
   font-family: var(--font-family);
+  font-size: 18px;
   padding: 0;
   margin: 0;
   background-color: var(--primary-color);
@@ -63,15 +66,25 @@ section {
   border-radius: 5px;
   margin-bottom: 20px;
 }
+img {
+  margin-top: 15px;
+  border-radius: 150px;
+  box-shadow: 0 0px 10px rgba(255, 255, 255, 3); /* Box shadow with white color */
+}
 
 div {
   text-align: left;
 }
 
+.skills-container p {
+  text-align: center;
+}
 .contact a {
-  text-align: left;
   text-decoration: none;
   color: var(--secondary-text-color);
+}
+.contact li {
+  text-decoration: none;
 }
 
 .contact a:hover {
@@ -84,4 +97,3 @@ div {
   color: var(--primary-color);
   background-color: var(--secondary-text-color);
 }
-/* Add more specific styles using the custom properties as needed */
