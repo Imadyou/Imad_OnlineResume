@@ -15,15 +15,24 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
-  line-height: 1.5;
   font-family: var(--font-family);
-  font-size: 20px;
   background-color: var(--primary-color);
+  height: 100%;
+  width: 100%;
+  padding-top: 60px;
+}
+body section {
+  line-height: 1.5;
+  font-size: 20px;
   color: var(--secondary-text-color);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 h2 {
@@ -31,43 +40,77 @@ h2 {
   padding-bottom: 2rem;
 }
 
-header {
+.header {
   background-color: var(--secondary-text-color);
   color: var(--primary-color);
-  text-align: left;
-  text-shadow: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 
-nav {
+.header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  padding: 0 30px;
+  min-height: 60px;
+}
+.logo {
+  font-size: 23px;
+  letter-spacing: -1.5px;
+  font-weight: 500;
 }
 
-nav ul {
-  list-style: none;
+.nav {
+  transition: all 0.3s ease-in-out;
+}
+.nav-list {
   display: flex;
+  list-style: none;
+  column-gap: 30px;
 }
 
-nav li {
-  margin-left: 1rem; /* Adjust spacing between items */
+.nav-item {
 }
 
-nav a {
-  font-weight: bold;
-  text-decoration: none;
+.nav-link {
   color: var(--primary-color);
+  font-size: 15px;
+  transition: all 0.4s;
 }
 
-nav a:hover {
-  color: var(--icon-color);
-  transition: color 0.3s ease;
-}
-.main-heading h1 {
+.nav-link:hover,
+.nav-link:focus {
   color: var(--icon-color);
 }
 
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  height: 2px;
+  width: 27px;
+  background: var(--primary-color);
+  margin: 5px 0;
+}
+
+.nav--open {
+  transform: translate(0) !important;
+}
+
+.hamburger--open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger--open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger--open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
 /* Aboutme section style */
 
 .aboutme-container {
@@ -88,6 +131,7 @@ nav a:hover {
   box-shadow: 0 0px 10px rgba(255, 255, 255, 3);
   opacity: 0;
   animation: fadeIn 1s ease-in forwards;
+  z-index: -1;
 }
 @keyframes fadeIn {
   from {
@@ -131,7 +175,7 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 3rem;
+  margin: 5rem;
 }
 .contact-container a {
   color: var(--secondary-text-color);
@@ -155,4 +199,40 @@ span {
   text-shadow: none;
   color: var(--primary-color);
   background-color: var(--secondary-text-color);
+
+  bottom: 0;
+}
+
+@media (max-width: 650px) {
+  .nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: var(--secondary-text-color);
+    width: 100%;
+    padding: 10px 0 25px;
+    transform: translateX(-100%);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
 }
