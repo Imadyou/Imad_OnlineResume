@@ -6,8 +6,6 @@
 :root {
   --primary-color: #28555e;
   --secondary-text-color: #ffffff;
-  --third-color: #414042;
-  --fourth-color: #444440;
   --icon-color: #d18c5c;
   --font-family: "Roboto", sans-serif;
   --shadow-wite: #ffffff;
@@ -56,9 +54,12 @@ h2 {
   min-height: 60px;
 }
 .logo {
-  font-size: 23px;
+  font-size: 25px;
   letter-spacing: -1.5px;
-  font-weight: 500;
+  font-weight: 700;
+}
+.logo:hover {
+  color: var(--icon-color);
 }
 
 .nav {
@@ -67,12 +68,12 @@ h2 {
 .nav-list {
   display: flex;
   list-style: none;
-  column-gap: 30px;
+  column-gap: 25px;
 }
 
 .nav-link {
   color: var(--primary-color);
-  font-size: 15px;
+  font-size: 20px;
   transition: all 0.4s;
 }
 
@@ -119,7 +120,10 @@ h2 {
 }
 
 .aboutme-container p {
+  border-radius: 1em;
   padding: 3rem;
+  margin: 2rem 7rem;
+  box-shadow: 0 0px 10px rgba(255, 255, 255, 3);
 }
 .aboutme-container > img {
   align-self: center;
@@ -200,7 +204,8 @@ span {
   bottom: 0;
 }
 
-@media (max-width: 650px) {
+/* Small devices (landscape phones, less than 768px)------- */
+@media screen and (min-width: 600px) and (max-width: 768px) {
   .nav {
     position: fixed;
     top: 60px;
@@ -218,11 +223,81 @@ span {
   }
 
   .nav-link {
-    font-size: 14px;
+    font-size: 18px;
   }
 
   .hamburger {
     display: block;
+  }
+
+  .aboutme-container p {
+    border-radius: 0.5em;
+    padding: 1.5em;
+    margin: 1.5em auto;
+    box-shadow: 0 0px 5px rgba(255, 255, 255, 3);
+  }
+
+  .work-experience-container,
+  .education-container {
+    padding: 3em;
+    margin: auto;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5em;
+  }
+
+  .contact-list {
+    padding: 2em;
+  }
+}
+/* Small devices (portrait phones, less than 600px) ------ */
+@media screen and (max-width: 599px) {
+  .nav {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    background-color: var(--secondary-text-color);
+    width: 100%;
+    padding: 10px 0 25px;
+    transform: translateX(-100%);
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .aboutme-container p {
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em auto;
+    box-shadow: 0 0px 10px rgba(255, 255, 255, 3);
+  }
+
+  .work-experience-container,
+  .education-container {
+    padding: 5em;
+    margin: auto;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5rem;
   }
 
   .contact-list {
