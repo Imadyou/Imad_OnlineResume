@@ -3,6 +3,8 @@
 /* Import the Roboto font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Ruda:wght@400..900&display=swap");
+
 :root {
   --primary-color: #28555e;
   --secondary-text-color: #ffffff;
@@ -54,10 +56,15 @@ h2 {
   min-height: 60px;
 }
 .logo {
-  font-size: 25px;
-  letter-spacing: -1.5px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 22px;
+  padding: 2px;
+  letter-spacing: -1px;
 }
+.logo img {
+  width: 1.5em;
+}
+
 .logo:hover {
   color: var(--icon-color);
 }
@@ -77,9 +84,14 @@ h2 {
   transition: all 0.4s;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.nav-link:hover {
   color: var(--icon-color);
+}
+
+.lang-btn {
+  padding: 3px;
+  color: var(--primary-color);
+  border-radius: 25%;
 }
 
 .hamburger {
@@ -167,11 +179,32 @@ span {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 5rem;
+  padding: 5em;
+}
+
+.skills-wrapper img {
+  padding: 1em;
+}
+
+.icon {
+  width: 8em;
+  height: 8em;
+}
+.icon-card {
+  box-shadow: 0px 2px 15px 2px var(--secondary-text-color);
+  border-radius: 3em;
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px;
+}
+.icon-card:hover {
+  transition: transform 0.3s ease-in-out;
+  transform-origin: center;
+  transform: scale(1.2);
+  box-shadow: none;
 }
 
 /* Contact sections style */
-
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -200,7 +233,6 @@ span {
   text-shadow: none;
   color: var(--primary-color);
   background-color: var(--secondary-text-color);
-
   bottom: 0;
 }
 
@@ -242,16 +274,9 @@ span {
     padding: 3em;
     margin: auto;
   }
-
-  .skills-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 5em;
-  }
-
-  .contact-list {
-    padding: 2em;
+  .icon {
+    width: 7em;
+    height: 7em;
   }
 }
 /* Small devices (portrait phones, less than 600px) ------ */
@@ -298,6 +323,11 @@ span {
     flex-direction: column;
     text-align: center;
     padding: 5rem;
+  }
+
+  .icon {
+    width: 5em;
+    height: 5em;
   }
 
   .contact-list {
